@@ -1,4 +1,5 @@
-FROM ubuntu
+ARG BASE_IMAGE_VERSION
+FROM ubuntu:${BASE_IMAGE_VERSION}
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -qq && apt-get install -y nfs-kernel-server runit inotify-tools -qq
 RUN mkdir -p /exports
